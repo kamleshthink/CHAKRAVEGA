@@ -55,7 +55,7 @@ export default function Navbar() {
           className="flex items-center gap-2 group min-w-0"
           aria-label="Chakravega Technologies Home"
         >
-          <div className="relative w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 flex-shrink-0">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex-shrink-0">
             <Image
               src="/images/chakravega_logo.png"
               alt="Chakravega Technologies"
@@ -64,7 +64,7 @@ export default function Navbar() {
               priority
             />
           </div>
-          <div className="hidden md:block min-w-0">
+          <div className="hidden lg:flex flex-col min-w-0">
             <span
               className="block truncate font-tight font-700 text-sm tracking-[0.08em] text-cool-white"
               style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 700, letterSpacing: "0.08em" }}

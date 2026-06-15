@@ -38,8 +38,8 @@ export default function Footer() {
       role="contentinfo"
     >
       <div className="container-wide py-16 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          <div className="lg:col-span-2">
+        <div className="flex gap-8 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:overflow-visible sm:pb-0">
+          <div className="min-w-[220px] sm:min-w-0 lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <div className="relative w-10 h-10">
                 <Image
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           {['Products', 'Industries', 'Company', 'Legal'].map((section) => (
-            <div key={section}>
+            <div key={section} className="min-w-[180px] sm:min-w-0">
               <div
                 className="text-[10px] font-semibold tracking-[0.15em] uppercase mb-5"
                 style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}
