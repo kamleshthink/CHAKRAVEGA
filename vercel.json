@@ -2,5 +2,19 @@
   "version": 2,
   "builds": [
     { "src": "frontend/package.json", "use": "@vercel/next" }
-  ]
+  ],
+  "experimental": {
+    "services": {
+      "frontend": {
+        "root": "frontend",
+        "routePrefix": "/",
+        "framework": "nextjs"
+      },
+      "backend": {
+        "root": "backend",
+        "routePrefix": "./_/backend",
+        "framework": "express"
+      }
+    }
+  }
 }
