@@ -52,10 +52,10 @@ export default function Navbar() {
             e.preventDefault();
             router.push("/");
           }}
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-2 group min-w-0"
           aria-label="Chakravega Technologies Home"
         >
-          <div className="relative w-9 h-9 lg:w-10 lg:h-10">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 flex-shrink-0">
             <Image
               src="/images/chakravega_logo.png"
               alt="Chakravega Technologies"
@@ -64,15 +64,15 @@ export default function Navbar() {
               priority
             />
           </div>
-          <div className="hidden sm:block">
+          <div className="hidden md:block min-w-0">
             <span
-              className="font-tight font-700 text-sm tracking-[0.08em] text-cool-white"
+              className="block truncate font-tight font-700 text-sm tracking-[0.08em] text-cool-white"
               style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 700, letterSpacing: "0.08em" }}
             >
               CHAKRAVEGA
             </span>
             <div
-              className="text-[9px] tracking-[0.15em] uppercase"
+              className="text-[9px] tracking-[0.15em] uppercase truncate"
               style={{ color: "var(--text-muted)", letterSpacing: "0.15em", fontFamily: "Inter Tight, sans-serif" }}
             >
               TECHNOLOGIES

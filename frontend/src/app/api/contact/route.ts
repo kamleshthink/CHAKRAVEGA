@@ -148,10 +148,20 @@ export async function POST(req: Request) {
       contactRecord = contact.toObject();
     }
 
-    // fire-and-forget notifications but await so Vercel returns after they complete
-    await Promise.all([sendEmailNotification(contactRecord), sendTelegramNotification(contactRecord)]);
+    let notificationWarning = false;
+    try {
+      await Promise.all([sendEmailNotification(contactRecord), sendTelegramNotification(contactRecord)]);
+    } catch (notificationError) {
+      console.error('Contact notification error:', notificationError);
+      notificationWarning = true;
+    }
 
-    return NextResponse.json({ success: true, message: 'Inquiry received.' }, { status: 201 });
+    const responseBody: any = { success: true, message: 'Inquiry received.' };
+    if (notificationWarning) {
+      responseBody.warning = 'Inquiry saved but notification delivery failed.';
+    }
+
+    return NextResponse.json(responseBody, { status: 201 });
   } catch (error) {
     console.error('Contact API error:', error);
     return NextResponse.json({ error: 'Unable to submit inquiry at this time.' }, { status: 500 });
