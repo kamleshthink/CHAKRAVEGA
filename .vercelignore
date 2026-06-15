@@ -1,0 +1,6 @@
+# Ignore backend secrets and node_modules
+backend/.env.local
+backend/node_modules
+frontend/node_modules
+*.env.local
+.DS_Store
