@@ -1,10 +1,16 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || process.env.NEXT_PUBLIC_MONGODB_URI;
+function getMongoUri(): string {
+  const uri = process.env.MONGODB_URI ?? process.env.NEXT_PUBLIC_MONGODB_URI;
 
-if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable inside Vercel');
+  if (!uri) {
+    throw new Error('Please define the MONGODB_URI environment variable inside Vercel');
+  }
+
+  return uri;
 }
+
+const MONGODB_URI = getMongoUri();
 
 let cached: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null } = (global as any)._mongo || { conn: null, promise: null };
 
