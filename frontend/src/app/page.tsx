@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Navbar from "@/components/sections/Navbar";
 import ScrollToSection from "@/components/sections/ScrollToSection";
 import Hero from "@/components/sections/Hero";
@@ -15,7 +16,9 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <ScrollToSection />
+      <Suspense fallback={null}>
+        <ScrollToSection />
+      </Suspense>
       <Hero />
       <Company />
       <BusinessUnits />

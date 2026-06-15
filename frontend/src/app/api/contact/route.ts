@@ -1,8 +1,34 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
-import geoip from 'geoip-lite';
 import { connectToMongo } from '@/lib/mongo';
 import mongoose from 'mongoose';
+
+async function lookupLocation(ip: string) {
+  if (!ip || ip === 'unknown') {
+    return null;
+  }
+
+  try {
+    const response = await axios.get(`https://ipapi.co/${ip}/json/`, { timeout: 5000 });
+    const data = response.data;
+
+    if (!data || data.error) {
+      return null;
+    }
+
+    return {
+      ip: data.ip || ip,
+      city: data.city || null,
+      region: data.region || null,
+      country: data.country_name || null,
+      latitude: data.latitude || null,
+      longitude: data.longitude || null,
+    };
+  } catch (error) {
+    console.error('Geo lookup failed:', error);
+    return null;
+  }
+}
 
 const POLICY_COOKIE = 'chakravega_consent';
 
@@ -101,7 +127,7 @@ export async function POST(req: Request) {
     await connectToMongo();
 
     const ip = getClientIp(req);
-    const location = geoip.lookup(ip) || null;
+    const location = await lookupLocation(ip);
 
     const contact = new Contact({
       name,

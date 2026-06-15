@@ -15,14 +15,12 @@
     "lucide-react": "^0.383.0",
     "framer-motion": "^11.2.10",
     "axios": "^1.5.0",
-    "mongoose": "^7.5.0",
-    "geoip-lite": "^1.4.2"
+    "mongoose": "^7.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/geoip-lite": "^1.4.3",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",

@@ -10,14 +10,14 @@ function getMongoUri(): string {
   return uri;
 }
 
-const MONGODB_URI = getMongoUri();
-
 let cached: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null } = (global as any)._mongo || { conn: null, promise: null };
 
 export async function connectToMongo() {
   if (cached.conn) {
     return cached.conn;
   }
+
+  const MONGODB_URI = getMongoUri();
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI, {
