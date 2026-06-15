@@ -1,4 +1,5 @@
 import Navbar from "@/components/sections/Navbar";
+import ScrollToSection from "@/components/sections/ScrollToSection";
 import Hero from "@/components/sections/Hero";
 import Company from "@/components/sections/Company";
 import BusinessUnits from "@/components/sections/BusinessUnits";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
+      <ScrollToSection />
       <Hero />
       <Company />
       <BusinessUnits />

@@ -8,6 +8,7 @@ export default function Contact() {
   const [formState, setFormState] = useState({ name: "", org: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,10 +34,32 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Simulate submission — replace with real API call
-    await new Promise((r) => setTimeout(r, 1200));
-    setSubmitting(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch(`${apiBase}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          org: formState.org,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Contact submission failed:", error);
+      alert("Unable to submit inquiry at this time. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {

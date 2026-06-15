@@ -3,19 +3,21 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const navLinks = [
-  { label: "Company", href: "#company" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Products", href: "#business-units" },
-  { label: "Industries", href: "#industries" },
-  { label: "Technology", href: "#technology" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Careers", href: "#careers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Company", id: "company" },
+  { label: "Solutions", id: "solutions" },
+  { label: "Products", id: "business-units" },
+  { label: "Industries", id: "industries" },
+  { label: "Technology", id: "technology" },
+  { label: "Leadership", id: "leadership" },
+  { label: "Careers", id: "careers" },
+  { label: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -24,6 +26,13 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const navigateToSection = (id: string) => (e?: React.MouseEvent) => {
+    e?.preventDefault();
+    // Use query param so navigation is client-side and URL doesn't include a hash
+    router.push(`/?section=${encodeURIComponent(id)}`);
+    setMobileOpen(false);
+  };
 
   return (
     <nav
@@ -37,7 +46,15 @@ export default function Navbar() {
     >
       <div className="container-wide flex items-center justify-between h-16 lg:h-[70px]">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group" aria-label="Chakravega Technologies Home">
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            router.push("/");
+          }}
+          className="flex items-center gap-2.5 group"
+          aria-label="Chakravega Technologies Home"
+        >
           <div className="relative w-9 h-9 lg:w-10 lg:h-10">
             <Image
               src="/images/chakravega_logo.png"
@@ -68,7 +85,8 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.label}
-              href={link.href}
+              href={`/?section=${link.id}`}
+              onClick={navigateToSection(link.id)}
               className="px-3 py-2 text-[13px] font-medium tracking-wide transition-colors duration-200"
               style={{
                 color: "var(--text-secondary)",
@@ -85,7 +103,8 @@ export default function Navbar() {
         {/* Right CTA — desktop */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="#contact"
+            href="/?section=contact"
+            onClick={navigateToSection("contact")}
             className="px-5 py-2.5 text-[12px] font-semibold tracking-[0.08em] uppercase transition-all duration-300 border border-cyan-DEFAULT text-cyan-DEFAULT hover:bg-cyan-DEFAULT hover:text-void"
             style={{
               fontFamily: "Inter Tight, sans-serif",
@@ -126,27 +145,27 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={`/?section=${link.id}`}
+                onClick={navigateToSection(link.id)}
                 className="py-3 text-[14px] font-medium transition-colors border-b"
                 style={{
                   color: "var(--text-secondary)",
                   borderColor: "rgba(61,90,107,0.15)",
                   fontFamily: "Inter, sans-serif",
                 }}
-                onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="#contact"
+              href="/?section=contact"
+              onClick={navigateToSection("contact")}
               className="mt-4 py-3 text-center text-[12px] font-semibold tracking-[0.08em] uppercase border"
               style={{
                 borderColor: "var(--cyan)",
                 color: "var(--cyan)",
                 fontFamily: "Inter Tight, sans-serif",
               }}
-              onClick={() => setMobileOpen(false)}
             >
               Schedule Consultation
             </a>

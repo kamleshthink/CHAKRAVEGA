@@ -14,15 +14,18 @@ const footerLinks = {
     { label: "Energy", href: "#industries" },
   ],
   Company: [
-    { label: "About Us", href: "#company" },
-    { label: "Technology", href: "#technology" },
-    { label: "Leadership", href: "#leadership" },
-    { label: "Careers", href: "#careers" },
+    { label: "About Us", href: "/?section=company" },
+    { label: "Technology", href: "/?section=technology" },
+    { label: "Leadership", href: "/?section=leadership" },
+    { label: "Careers", href: "/?section=careers" },
+    { label: "Investors", href: "/investors" },
+    { label: "Reports", href: "/reports" },
+    { label: "Transparency", href: "/transparency" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
+    { label: "Cookie Policy", href: "/cookies-policy" },
   ],
 };
 
@@ -86,7 +89,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
               <div
@@ -116,10 +118,8 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Divider */}
         <div className="section-divider mb-8" />
 
-        {/* Bottom row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p
             className="text-[11px]"
