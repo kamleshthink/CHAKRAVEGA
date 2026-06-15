@@ -9,6 +9,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "";
+  const contactApiUrl = apiBase ? `${apiBase}/api/contact` : "/api/contact";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,7 +37,7 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      const response = await fetch(`${apiBase}/api/contact`, {
+      const response = await fetch(contactApiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

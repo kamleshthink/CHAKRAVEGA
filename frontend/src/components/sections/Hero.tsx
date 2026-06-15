@@ -199,15 +199,6 @@ export default function Hero() {
       <div className="relative z-10 flex-1 flex items-center">
         <div className="container-wide w-full pt-24 lg:pt-0">
           <div className="max-w-4xl">
-            {/* Eyebrow */}
-            <div className="eyebrow mb-8 flex items-center gap-3">
-              <span
-                className="inline-block w-8 h-px"
-                style={{ background: "var(--cyan)" }}
-              />
-              Deep-Tech · India · Global Ambition
-            </div>
-
             {/* Headline */}
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
@@ -236,7 +227,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#business-units"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-[13px] font-semibold tracking-[0.08em] uppercase transition-all duration-300"
+                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-[13px] font-semibold tracking-[0.08em] uppercase transition-all duration-300"
                 style={{
                   background: "var(--cyan)",
                   color: "var(--void)",
@@ -257,7 +248,7 @@ export default function Hero() {
 
               <a
                 href="#company"
-                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[13px] font-semibold tracking-[0.08em] uppercase border transition-all duration-300"
+                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-8 py-4 text-[13px] font-semibold tracking-[0.08em] uppercase border transition-all duration-300"
                 style={{
                   borderColor: "rgba(61,90,107,0.5)",
                   color: "var(--text-secondary)",
@@ -298,20 +289,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 animate-bounce"
-        aria-hidden="true"
-      >
-        <div
-          className="w-px h-10"
-          style={{
-            background:
-              "linear-gradient(to bottom, transparent, rgba(0,194,255,0.4))",
-          }}
-        />
-        <ChevronDown size={14} style={{ color: "var(--text-muted)" }} />
-      </div>
     </section>
   );
 }

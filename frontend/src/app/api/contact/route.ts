@@ -124,12 +124,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 });
     }
 
-    await connectToMongo();
-
     const ip = getClientIp(req);
     const location = await lookupLocation(ip);
 
-    const contact = new Contact({
+    const contactData = {
       name,
       org,
       email,
@@ -139,12 +137,19 @@ export async function POST(req: Request) {
       userAgent: req.headers.get('user-agent') || 'Unknown',
       referrer: req.headers.get('referer') || 'Direct',
       cookiesConsent: (req.headers.get('cookie') || '').includes(`${POLICY_COOKIE}=accepted`),
-    });
+    };
 
-    await contact.save();
+    const mongoConn = await connectToMongo();
+    let contactRecord = contactData;
+
+    if (mongoConn) {
+      const contact = new Contact(contactData);
+      await contact.save();
+      contactRecord = contact.toObject();
+    }
 
     // fire-and-forget notifications but await so Vercel returns after they complete
-    await Promise.all([sendEmailNotification(contact), sendTelegramNotification(contact)]);
+    await Promise.all([sendEmailNotification(contactRecord), sendTelegramNotification(contactRecord)]);
 
     return NextResponse.json({ success: true, message: 'Inquiry received.' }, { status: 201 });
   } catch (error) {
