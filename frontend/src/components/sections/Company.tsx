@@ -69,7 +69,7 @@ export default function Company() {
             style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif", maxWidth: "600px" }}
           >
             Chakravega Technologies was founded to address a gap: the absence of
-            deep-tech companies from India's industrial heartland that build serious,
+            deep-tech companies from India&#39;s industrial heartland that build serious,
             high-impact intelligent systems. We operate at the intersection of engineering
             rigor and applied intelligence, targeting problems where the stakes are real.
           </p>

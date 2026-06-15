@@ -165,7 +165,7 @@ export default function Leadership() {
             >
               Chakravega Technologies Private Limited is a founder-led organization.
               The founding team holds equity stakes reflecting their individual contributions to
-              the company's creation, direction, and technical development.
+              the company&#39;s creation, direction, and technical development.
             </p>
             <a
               href="#careers"

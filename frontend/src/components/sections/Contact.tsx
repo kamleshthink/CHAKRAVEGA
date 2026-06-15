@@ -100,7 +100,7 @@ export default function Contact() {
             className="text-3xl lg:text-5xl font-bold tracking-tight reveal delay-100"
             style={{ fontFamily: "Inter Tight, sans-serif", color: "var(--cool-white)" }}
           >
-            Let's Build
+            Let&#39;s Build
             <br />
             <span style={{ color: "var(--cyan)" }}>Something Meaningful.</span>
           </h2>
@@ -224,7 +224,7 @@ export default function Contact() {
                     className="text-sm"
                     style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
                   >
-                    We'll get back to you within 48 business hours.
+                    We&#39;ll get back to you within 48 business hours.
                   </p>
                 </div>
               </div>

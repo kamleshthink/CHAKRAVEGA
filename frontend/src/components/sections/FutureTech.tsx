@@ -89,7 +89,7 @@ export default function FutureTech() {
             style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
           >
             These are not concepts. These are strategic development initiatives
-            that define Chakravega's long-term engineering roadmap.
+            that define Chakravega&#39;s long-term engineering roadmap.
           </p>
         </div>
 
@@ -165,7 +165,7 @@ export default function FutureTech() {
               className="text-sm leading-relaxed"
               style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
             >
-              These technologies represent Chakravega's R&D investment areas.
+              These technologies represent Chakravega&#39;s R&D investment areas.
               Each is aligned to a specific market gap where intelligent systems
               can deliver asymmetric value.
             </p>

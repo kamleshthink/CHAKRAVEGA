@@ -149,7 +149,7 @@ export default function Careers() {
                 className="text-xs mb-3"
                 style={{ color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}
               >
-                Don't see your role? We're always open to exceptional talent.
+                Don&#39;t see your role? We&#39;re always open to exceptional talent.
               </p>
               <a
                 href="mailto:chakravegatechnologies@gmail.com"
