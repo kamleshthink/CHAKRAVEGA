@@ -18,8 +18,18 @@ export const metadata: Metadata = {
     "digital infrastructure",
     "Jharkhand",
   ],
+  metadataBase: new URL("https://chakravegatechnologies.com"),
   authors: [{ name: "Chakravega Technologies Private Limited" }],
   creator: "Chakravega Technologies Private Limited",
+  applicationName: "Chakravega Technologies",
+  icons: {
+    icon: "/images/chakravega_logo.png",
+    shortcut: "/images/chakravega_logo.png",
+    apple: "/images/chakravega_logo.png",
+  },
+  alternates: {
+    canonical: "https://chakravegatechnologies.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -28,11 +38,13 @@ export const metadata: Metadata = {
     description:
       "Advanced AI, industrial intelligence, and autonomous systems from India.",
     siteName: "Chakravega Technologies",
+    images: ["/images/chakravega_logo.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Chakravega Technologies | Engineering Intelligence",
     description: "Advanced AI and industrial intelligence from India.",
+    images: ["/images/chakravega_logo.png"],
   },
   robots: {
     index: true,

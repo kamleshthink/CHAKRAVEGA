@@ -38,9 +38,7 @@ export default function Footer() {
       role="contentinfo"
     >
       <div className="container-wide py-16 lg:py-20">
-        {/* Top row */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16">
-          {/* Brand block */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <div className="relative w-10 h-10">
@@ -68,11 +66,10 @@ export default function Footer() {
             </div>
 
             <p
-              className="text-sm leading-relaxed mb-6 max-w-xs"
+              className="text-sm leading-relaxed mb-6 max-w-xs sm:max-w-none"
               style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
             >
-              Engineering Intelligence for a Safer and Smarter Future.
-              A deep-tech company originating from India.
+              Engineering Intelligence for a Safer and Smarter Future. A deep-tech company originating from India.
             </p>
 
             <div className="flex items-center gap-1">
@@ -89,61 +86,33 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-8">
-            {['Products', 'Industries', 'Company'].map((section) => (
-              <div key={section}>
-                <div
-                  className="text-[10px] font-semibold tracking-[0.15em] uppercase mb-5"
-                  style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}
-                >
-                  {section}
-                </div>
-                <ul className="flex flex-col gap-3">
-                  {footerLinks[section as keyof typeof footerLinks].map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="text-sm transition-colors duration-200"
-                        style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
-                        target={link.href.startsWith("http") ? "_blank" : undefined}
-                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+          {['Products', 'Industries', 'Company', 'Legal'].map((section) => (
+            <div key={section}>
+              <div
+                className="text-[10px] font-semibold tracking-[0.15em] uppercase mb-5"
+                style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}
+              >
+                {section}
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-          <div>
-            <div
-              className="text-[10px] font-semibold tracking-[0.15em] uppercase mb-5"
-              style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}
-            >
-              Legal
+              <ul className="flex flex-col gap-3">
+                {footerLinks[section as keyof typeof footerLinks].map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-sm transition-colors duration-200"
+                      style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="flex flex-col gap-3">
-              {footerLinks.Legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm transition-colors duration-200"
-                    style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
 
         <div className="section-divider mb-8" />

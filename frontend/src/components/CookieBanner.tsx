@@ -38,33 +38,49 @@ export default function CookieBanner() {
     setSaving(false);
   };
 
+  const customizeCookies = () => {
+    window.location.href = "/cookies-policy";
+  };
+
   if (!visible) {
     return null;
   }
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 w-[min(96%,720px)] -translate-x-1/2 rounded-2xl border border-[rgba(194,245,255,0.18)] bg-[#070b11cc] p-5 shadow-[0_16px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl text-sm">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+    <div className="fixed bottom-4 left-1/2 z-50 w-[min(96%,720px)] -translate-x-1/2 rounded-[28px] border border-[rgba(194,245,255,0.18)] bg-[#08101fdd] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl text-sm">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
           <div className="font-semibold text-white" style={{ fontFamily: "Inter Tight, sans-serif" }}>
-            We use cookies to improve your browsing experience.
+            Cookies help us deliver a personalized and secure experience.
           </div>
           <p className="mt-2 text-[13px] text-[rgba(255,255,255,0.75)]" style={{ fontFamily: "Inter, sans-serif" }}>
-            By accepting, you agree to our cookie policy and let us store a consent record.
+            Accept cookies for full access, or customize your preferences before continuing.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={acceptCookies}
-          disabled={saving}
-          className="inline-flex items-center justify-center rounded-full bg-cyan-DEFAULT px-5 py-3 text-[13px] font-semibold uppercase tracking-[0.1em] text-void transition-all duration-200 hover:bg-[#00d4ff] disabled:opacity-60"
-          style={{ fontFamily: "Inter Tight, sans-serif" }}
-        >
-          {saving ? "Saving..." : "Accept Cookies"}
-        </button>
+
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <button
+            type="button"
+            onClick={customizeCookies}
+            className="inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.15)] bg-transparent px-5 py-3 text-[13px] font-semibold uppercase tracking-[0.1em] text-white transition-all duration-200 hover:border-cyan-DEFAULT hover:text-cyan-DEFAULT"
+            style={{ fontFamily: "Inter Tight, sans-serif" }}
+          >
+            Customize
+          </button>
+          <button
+            type="button"
+            onClick={acceptCookies}
+            disabled={saving}
+            className="inline-flex items-center justify-center rounded-full bg-cyan-DEFAULT px-5 py-3 text-[13px] font-semibold uppercase tracking-[0.1em] text-void transition-all duration-200 hover:bg-[#00d4ff] disabled:opacity-60"
+            style={{ fontFamily: "Inter Tight, sans-serif" }}
+          >
+            {saving ? "Saving..." : "Accept Cookies"}
+          </button>
+        </div>
       </div>
+
       <div className="mt-4 text-[12px] text-[rgba(255,255,255,0.65)]" style={{ fontFamily: "Inter, sans-serif" }}>
-        You can change your preference later on the Cookie Policy page.
+        Your choice is saved securely and remembered for future visits.
       </div>
     </div>
   );
