@@ -24,9 +24,9 @@ const pillars = [
   },
   {
     icon: Cpu,
-    title: "Robotics & Autonomous Systems",
+    title: "Engineering Excellence",
     description:
-      "Developing the next generation of autonomous technologies that will redefine how machines interact with the physical world.",
+      "Delivering high-reliability, enterprise-grade engineering solutions that scale seamlessly and stand the test of time.",
   },
 ];
 
@@ -138,7 +138,7 @@ export default function Company() {
               style={{ fontFamily: "Inter Tight, sans-serif", color: "var(--cool-white)" }}
             >
               To become a globally trusted deep-tech company originating from India,
-              advancing the future of industrial intelligence, robotics, and autonomous systems.
+              advancing the future of industrial intelligence, digital infrastructure, and engineering excellence.
             </p>
           </div>
         </div>

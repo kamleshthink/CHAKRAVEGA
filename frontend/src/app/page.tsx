@@ -4,7 +4,6 @@ import ScrollToSection from "@/components/sections/ScrollToSection";
 import Hero from "@/components/sections/Hero";
 import Company from "@/components/sections/Company";
 import BusinessUnits from "@/components/sections/BusinessUnits";
-import FutureTech from "@/components/sections/FutureTech";
 import Industries from "@/components/sections/Industries";
 import TechEcosystem from "@/components/sections/TechEcosystem";
 import Leadership from "@/components/sections/Leadership";
@@ -22,7 +21,6 @@ export default function Home() {
       <Hero />
       <Company />
       <BusinessUnits />
-      <FutureTech />
       <Industries />
       <TechEcosystem />
       <Leadership />

@@ -132,15 +132,26 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-[10px] tracking-wide mb-1" style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}>EMAIL</div>
-                    <a
-                      href="mailto:chakravegatechnologies@gmail.com"
-                      className="text-sm transition-colors duration-200"
-                      style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
-                    >
-                      chakravegatechnologies@gmail.com
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="mailto:chakravegatechnologies@gmail.com"
+                        className="text-sm transition-colors duration-200"
+                        style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                      >
+                        chakravegatechnologies@gmail.com
+                      </a>
+                      <a
+                        href="mailto:jhariawatch@chakravega.com"
+                        className="text-sm transition-colors duration-200"
+                        style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                      >
+                        jhariawatch@chakravega.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -161,12 +172,12 @@ export default function Contact() {
                       onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cool-white)")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
                     >
-                      +91 7209 213 003
+                      +91 72092 13003
                     </a>
                   </div>
                 </div>
 
-                {/* Address */}
+                {/* Operational Office */}
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5"
@@ -175,16 +186,57 @@ export default function Contact() {
                     <MapPin size={13} style={{ color: "var(--cyan)" }} />
                   </div>
                   <div>
-                    <div className="text-[10px] tracking-wide mb-1" style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}>OFFICE</div>
+                    <div className="text-[10px] tracking-wide mb-1" style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}>OPERATIONAL OFFICE</div>
                     <address
                       className="text-sm not-italic leading-relaxed"
                       style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
                     >
-                      Samudih, Patrakhurd<br />
-                      Japla, Palamau<br />
-                      Jharkhand – 822116<br />
-                      India
+                      Birsa Institute of Technology (BIT) Sindri,<br />
+                      Sindri, Dhanbad – 828123,<br />
+                      Jharkhand, India
                     </address>
+                  </div>
+                </div>
+
+                {/* Registered Office */}
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ border: "1px solid rgba(0,194,255,0.2)", background: "rgba(0,194,255,0.05)" }}
+                  >
+                    <MapPin size={13} style={{ color: "var(--cyan)" }} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] tracking-wide mb-1" style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}>REGISTERED OFFICE</div>
+                    <address
+                      className="text-sm not-italic leading-relaxed"
+                      style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
+                    >
+                      C/O Chinta Devi,<br />
+                      Village – Samudih,<br />
+                      P.O. – Jhargara, Japla,<br />
+                      District – Palamau,<br />
+                      Jharkhand – 822116, India
+                    </address>
+                  </div>
+                </div>
+
+                {/* CIN Identifier */}
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ border: "1px solid rgba(0,194,255,0.2)", background: "rgba(0,194,255,0.05)" }}
+                  >
+                    <span className="text-[9px] font-bold" style={{ color: "var(--cyan)" }}>CIN</span>
+                  </div>
+                  <div>
+                    <div className="text-[10px] tracking-wide mb-1" style={{ color: "var(--text-muted)", fontFamily: "Inter Tight, sans-serif" }}>CORPORATE IDENTIFIER</div>
+                    <div
+                      className="text-sm font-semibold"
+                      style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
+                    >
+                      U62099JH2026PTC028403
+                    </div>
                   </div>
                 </div>
               </div>

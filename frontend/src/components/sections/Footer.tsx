@@ -66,11 +66,20 @@ export default function Footer() {
             </div>
 
             <p
-              className="text-sm leading-relaxed mb-6 max-w-xs sm:max-w-none"
+              className="text-xs leading-relaxed mb-4 max-w-xs"
               style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
             >
               Engineering Intelligence for a Safer and Smarter Future. A deep-tech company originating from India.
             </p>
+
+            <div
+              className="text-[11px] leading-relaxed mb-6 flex flex-col gap-1"
+              style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
+            >
+              <div><strong style={{ color: "var(--cool-white)" }}>CIN:</strong> U62099JH2026PTC028403</div>
+              <div><strong style={{ color: "var(--cool-white)" }}>Regd. Office:</strong> C/O Chinta Devi, Samudih, Japla, Palamau, Jharkhand – 822116</div>
+              <div><strong style={{ color: "var(--cool-white)" }}>Ops. Office:</strong> BIT Sindri, Sindri, Dhanbad, Jharkhand – 828123</div>
+            </div>
 
             <div className="flex items-center gap-1">
               <span
@@ -124,7 +133,7 @@ export default function Footer() {
           >
             © {year} Chakravega Technologies Private Limited. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <a
               href="mailto:chakravegatechnologies@gmail.com"
               className="text-[11px] transition-colors duration-200"
@@ -135,11 +144,21 @@ export default function Footer() {
               chakravegatechnologies@gmail.com
             </a>
             <span style={{ color: "var(--text-muted)", fontSize: "10px" }}>|</span>
+            <a
+              href="mailto:jhariawatch@chakravega.com"
+              className="text-[11px] transition-colors duration-200"
+              style={{ color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cyan)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            >
+              jhariawatch@chakravega.com
+            </a>
+            <span style={{ color: "var(--text-muted)", fontSize: "10px" }}>|</span>
             <span
               className="text-[11px]"
               style={{ color: "var(--text-muted)", fontFamily: "Inter, sans-serif" }}
             >
-              Jharkhand, India
+              +91 72092 13003
             </span>
           </div>
         </div>

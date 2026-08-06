@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Chakravega Technologies Pvt. Ltd. | Engineering Intelligence for a Safer and Smarter Future",
   description:
-    "Chakravega Technologies develops advanced AI systems, industrial intelligence platforms, digital infrastructure solutions, and future autonomous technologies designed to solve high-impact real-world challenges.",
+    "Chakravega Technologies develops advanced AI systems, industrial intelligence platforms, digital infrastructure solutions, and enterprise engineering systems designed to solve high-impact real-world challenges.",
   keywords: [
     "AI systems",
     "industrial intelligence",
@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     "coal mine safety",
     "JhariaWatch",
     "PragyaTek",
-    "autonomous systems",
-    "robotics",
+    "enterprise engineering",
     "digital infrastructure",
     "Jharkhand",
   ],
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://chakravegatechnologies.com",
     title: "Chakravega Technologies | Engineering Intelligence",
     description:
-      "Advanced AI, industrial intelligence, and autonomous systems from India.",
+      "Advanced AI, industrial intelligence, and enterprise engineering systems from India.",
     siteName: "Chakravega Technologies",
     images: ["/images/chakravega_logo.png"],
   },

@@ -145,14 +145,14 @@ function MetricCounter({ value, suffix, label }: { value: number; suffix: string
   return (
     <div ref={ref} className="text-center">
       <div
-        className="font-tight text-3xl lg:text-4xl font-bold mb-1"
+        className="font-tight text-2xl sm:text-3xl lg:text-4xl font-bold mb-1"
         style={{ fontFamily: "Inter Tight, sans-serif", color: "var(--cyan)" }}
       >
         {count}
         {suffix}
       </div>
       <div
-        className="text-[11px] tracking-[0.12em] uppercase"
+        className="text-[10px] sm:text-[11px] tracking-[0.12em] uppercase"
         style={{ color: "var(--text-secondary)", fontFamily: "Inter Tight, sans-serif" }}
       >
         {label}
@@ -197,11 +197,11 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="container-wide w-full pt-24 lg:pt-0">
+        <div className="container-wide w-full pt-20 pb-10 lg:pt-0 lg:pb-0">
           <div className="max-w-4xl">
             {/* Headline */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
+              className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-6 sm:mb-8"
               style={{ fontFamily: "Inter Tight, sans-serif", color: "var(--cool-white)" }}
             >
               Engineering Intelligence
@@ -215,11 +215,11 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p
-              className="text-base lg:text-lg max-w-2xl mb-12 leading-relaxed"
+              className="text-sm sm:text-base lg:text-lg max-w-2xl mb-8 sm:mb-12 leading-relaxed"
               style={{ color: "var(--text-secondary)", fontFamily: "Inter, sans-serif" }}
             >
               Chakravega Technologies develops advanced AI systems, industrial intelligence
-              platforms, digital infrastructure solutions, and future autonomous technologies
+              platforms, digital infrastructure solutions, and enterprise engineering systems
               designed to solve high-impact real-world challenges.
             </p>
 
@@ -242,7 +242,7 @@ export default function Hero() {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                Explore Solutions
+                Explore Products
                 <ChevronDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
               </a>
 
@@ -280,8 +280,8 @@ export default function Hero() {
           backdropFilter: "blur(20px)",
         }}
       >
-        <div className="container-wide py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="container-wide py-5 sm:py-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {metrics.map((m) => (
               <MetricCounter key={m.label} {...m} />
             ))}
